@@ -5,7 +5,7 @@ const app = require("./app");
 const {DB_HOST, PORT = 3000} = process.env;
 mongoose.set("strictQuery", false);
 
-mongoose.connect(DB_HOST)
+mongoose.connect(DB_HOST, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=> {console.log("Database connection successful");
 app.listen(PORT, () => {
     console.log("Server is running. Use our API on port: 3000");
