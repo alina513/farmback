@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+const dotenv = require("dotenv");
+dotenv.config();
+
 
 const app = require("./app");
 
-const {DB_HOST = "mongodb+srv://Alina:B0Ccutk9bEWfFPoE@cluster0.kscvqe6.mongodb.net/farmshop", PORT = 3000, SECRET_KEY = "4444@fgH78"} = process.env;
+const {DB_HOST, PORT = 3000, SECRET_KEY } = process.env;
 mongoose.set("strictQuery", true);
 
 mongoose.connect(DB_HOST)
