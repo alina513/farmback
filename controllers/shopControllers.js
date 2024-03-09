@@ -1,6 +1,10 @@
 const {Shop} = require("../models/shop.js");
 const HttpError = require("../helpers/HttpError.js");
 const ctrlWrapper = require("../helpers/ctrlWrapper.js");
+const {SECRET_KEY="444478"} = process.env;
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+dotenv.config();
 
 // const getAllContacts = async (req, res) => {
 //   const {_id: owner} = req.user;
