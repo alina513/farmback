@@ -40,6 +40,7 @@ const ctrlWrapper = require("../helpers/ctrlWrapper.js");
 
 const createShop = async (req, res) => {
   const {_id: owner} = req.user;
+  console.log(req.user);
   const result = await Shop.create({...req.body, owner});
   if (!result) {
     throw HttpError(400);
