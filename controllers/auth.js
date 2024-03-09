@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 dotenv.config();
-const {SECRET_KEY} = process.env;
+const {SECRET_KEY="444478"} = process.env;
 
 
 const register = async(req, res) => {
