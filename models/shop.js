@@ -29,7 +29,7 @@ const Shop = model("shop", shopSchema);
 const createShopSchema = Joi.object({
 name: Joi.string().required(),
 price: Joi.string().required(),
-number: Joi.string().required(),
+number: Joi.string(),
 })
 
 const schemas = {createShopSchema,
