@@ -8,7 +8,7 @@ const ctrl = require("../controllers/shopControllers");
 const authenticate = require("../middlewares/authenticate.js")
 const shopRouter = express.Router();
 shopRouter.post(
-      "/",
+      "/", authenticate,
       validateBody(schemas.createShopSchema),
       ctrl.createShop
     );
