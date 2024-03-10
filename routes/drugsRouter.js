@@ -1,5 +1,6 @@
 const express = require("express");
-const {schemas} = require("../models/drug.js")
+const {schemas} = require("../models/drug.js");
+const  validateBody  = require("../helpers/validateBody.js");
 
 const ctrl = require("../controllers/drugsControllers.js");
 const drugsRouter = express.Router();
