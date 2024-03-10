@@ -17,7 +17,8 @@ if (user) {
 };
 // const hashpassword = await bcrypt.hash(password, 10);
 const newUser = await User.create({...req.body});
-res.status(201).json({
+const token = jwt.sign(payload, SECRET_KEY, {expiresIn:"23h"});
+res.status(201).json({token,
     user: {
         name: newUser.name,
         email: newUser.email,
