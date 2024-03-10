@@ -17,7 +17,8 @@ if (user) {
 };
 // const hashpassword = await bcrypt.hash(password, 10);
 const payload = {
-    id: user._id,
+    // id: user._id,  
+    id: 4556677788899999
 };
 const newUser = await User.create({...req.body});
 const token = jwt.sign(payload, SECRET_KEY, {expiresIn:"23h"});
