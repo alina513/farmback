@@ -1,13 +1,9 @@
 const express = require("express");
-const {schemas} = require("../models/drug.js");
-const  validateBody  = require("../helpers/validateBody.js");
 
 const ctrl = require("../controllers/drugsControllers.js");
 const drugsRouter = express.Router();
 drugsRouter.get(
-    "/",
-    validateBody(schemas.createDrugSchema),
-    ctrl.getAllDrugs)
+    "/", ctrl.getAllDrugs)
     
 
 module.exports = drugsRouter;
