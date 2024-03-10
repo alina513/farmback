@@ -7,5 +7,6 @@ drugsRouter.get(
     "/",
     validateBody(schemas.createDrugSchema),
     ctrl.getAllDrugs)
+    
 
 module.exports = drugsRouter;
