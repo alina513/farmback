@@ -1,5 +1,5 @@
 const express = require("express");
-import {schemas} from "../models/drug.js"
+const {schemas} = require("../models/drug.js")
 
 const ctrl = require("../controllers/drugsControllers.js");
 const drugsRouter = express.Router();
