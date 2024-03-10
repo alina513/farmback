@@ -4,7 +4,7 @@ const {User} = require("../models/user");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const {SECRET_KEY} = process.env;
+const {SECRET_KEY="444478"} = process.env;
 
 const authenticate = async (req, res, next) => {
     const {authorization = ""} = req.headers;
