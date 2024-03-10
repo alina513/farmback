@@ -16,11 +16,10 @@ if (user) {
     throw HttpError(409, "Email in use")
 };
 // const hashpassword = await bcrypt.hash(password, 10);
+const newUser = await User.create({ ...req.body });
 const payload = {
-    // id: user._id,  
-    id: 4556677788899999
+    id: newUser._id,  
 };
-const newUser = await User.create({...req.body});
 const token = jwt.sign(payload, SECRET_KEY, {expiresIn:"23h"});
 res.status(201).json({token,
     user: {
