@@ -13,10 +13,6 @@ const shopSchema = new Schema({
       number: {
         type: String,
       },
-    //   favorite: {
-    //     type: Boolean,
-    //     default: false,
-    //   },
       owner: {
         type: Schema.Types.ObjectId,
         ref: 'user',
@@ -36,18 +32,7 @@ price: Joi.string().required(),
 number: Joi.string().required(),
 })
 
-// const updateContactSchema = Joi.object({
-// name: Joi.string(),
-// email: Joi.string(),
-// phone: Joi.string(),
-// })
-
-// const updateFavoriteSchema = Joi.object({
-//     favorite: Joi.boolean().required(),
-// })
 const schemas = {createShopSchema,
-//   updateContactSchema, 
-//   updateFavoriteSchema
 }
 
 module.exports = {Shop,
