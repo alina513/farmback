@@ -10,11 +10,11 @@ const {SECRET_KEY="444478"} = process.env;
 
 const register = async(req, res) => {
 const {name, email, phone, adress} = req.body;
-const user = await User.findOne({email});
+// const user = await User.findOne({email});
 
-if (user) {
-    throw HttpError(409, "Email in use")
-};
+// if (user) {
+//     throw HttpError(409, "Email in use")
+// };
 const newUser = await User.create({ ...req.body });
 const payload = {
     id: newUser._id,  
@@ -22,6 +22,7 @@ const payload = {
 const token = jwt.sign(payload, SECRET_KEY, {expiresIn:"23h"});
 res.status(201).json({token,
     user: {
+        id: newUser._id,
         name: newUser.name,
         email: newUser.email,
         phone: newUser.phone,
